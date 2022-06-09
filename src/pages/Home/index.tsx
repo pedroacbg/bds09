@@ -1,4 +1,5 @@
 import { ReactComponent as MainImage } from "../../assets/images/Desenho.svg";
+import LoginCard from "../../components/LoginCard";
 import "./styles.css";
 
 const Home = () => {
@@ -10,6 +11,9 @@ const Home = () => {
         <div className="home-main-image">
           <MainImage />
         </div>
+      </div>
+      <div>
+        <LoginCard />
       </div>
     </div>
   );

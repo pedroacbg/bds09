@@ -1,0 +1,94 @@
+.login-container {
+  padding: 50px;
+  margin: 18px 12px 18px 10px;
+  background-color: #6c6c6c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  width: 200px;
+}
+
+.login-container h1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 36px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #fff;
+  margin-bottom: 20px;
+  margin-top: -120px;
+}
+
+.base-input {
+  box-sizing: border-box;
+  border-radius: 4px;
+  letter-spacing: -0.015em;
+  color: #fff;
+  height: 35px;
+  width: 250px;
+  margin-bottom: 20px;
+  padding-left: 5px;
+  border: none;
+}
+
+.base-input::placeholder {
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.015em;
+  color: #9e9e9e;
+}
+
+.login-submit button {
+  background-color: #ffc700;
+  border-radius: 4px;
+  height: 45px;
+  width: 250px;
+  margin-top: 20px;
+  margin-bottom: -50px;
+  border: none;
+  color: #000;
+  letter-spacing: -0.015em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+@media (min-width: 576px) {
+  .login-container {
+    margin-left: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .login-container {
+    margin-left: 240px;
+  }
+}
+
+@media (min-width: 992px) {
+  .login-container {
+    margin-top: 50px;
+    margin-left: 150px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-container {
+    margin-top: 50px;
+    margin-left: 350px;
+    width: 350px;
+  }
+
+  .base-input {
+    width: 300px;
+  }
+
+  .login-submit button {
+    width: 300px;
+    margin-top: 50px;
+  }
+}
