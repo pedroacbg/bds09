@@ -1,15 +1,22 @@
-import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/NavBar";
+import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home";
+import MovieRoute from "./pages/MovieRoute";
+import history from "./util/history";
 
 const Routes = () => (
-  <BrowserRouter>
+  <Router history={history}>
     <Navbar />
     <Switch>
       <Route path="/" exact>
         <Home />
       </Route>
+      <PrivateRoute path="/movies">
+        <MovieRoute />
+      </PrivateRoute>
     </Switch>
-  </BrowserRouter>
+  </Router>
 );
+
 export default Routes;

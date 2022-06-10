@@ -1,5 +1,5 @@
 import { ReactComponent as MainImage } from "../../assets/images/Desenho.svg";
-import LoginCard from "../../components/LoginCard";
+import Login from "./Login";
 import "./styles.css";
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <LoginCard />
+        <Login />
       </div>
     </div>
   );
