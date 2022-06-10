@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# Desafio Capítulo 09 do Bootcamp React da DevSuperior
+Desafio para entregar  - TAREFA: MovieFlix front inicial
+Design Figma
+https://www.figma.com/file/Yul1TnqQXmBsLwm5h5nvJu/MovieFlix-front-inicial
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Construa um pequeno app conforme design acima. Este app deverá se comunicar com o seu back end desenvolvido na tarefa “MovieFlix casos de uso” do Capítulo 5, e deve atender os requisitos abaixo:
 
-## Available Scripts
+Ao acessar a rota raiz do app, deverá aparecer uma tela de login.
 
-In the project directory, you can run:
+Ao fazer login com sucesso, o usuário deverá ser redirecionado para a rota /movies que corresponde à tela de listagem de filmes.
 
-### `npm start`
+Durante todo o tempo em que o usuário estiver logado, deverá aparecer na barra de navegação um botão “Sair” que deverá realizar o logout do usuário e redirecioná-lo para a tela de login.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+A tela de listagem de filmes deve exibir apenas um título, e dois links para os detalhes dos filmes de código 1 e 2 respectivamente.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Ao clicar em um dos links dos detalhes do filme, o usuário deve ser levado para a rota /movies/:movieId, que corresponde à tela de detalhes do filme.
 
-### `npm test`
+Na tela de detalhes do filme, caso o usuário possua o perfil MEMBER, deve ser exibido um card com um formulário para que o usuário possa entrar com uma avaliação do filme. Se o usuário não possuir o perfil de MEMBER, este card não deve ser exibido.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Na tela de detalhes do filme, abaixo do card de formulário, deve aparecer um outro card com uma listagem de TODAS avaliações daquele filme (não esqueça o atributo “key” em cada item renderizado). Quando um usuário MEMBER informar com sucesso uma nova avaliação, esta listagem deve ser atualizada.
 
-### `npm run build`
+As telas listagem de filmes e detalhes do filme devem ser rotas protegidas. Se o usuário não autenticado tentar acessar diretamente essas rotas, ele deve ser redirecionado para a tela de login.
+Sugestão de passos para implementar o projeto:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1) Faça o layout da tela de login, respondendo pela rota /
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2) Faça a requisição de autenticação e o redirecionamento para a rota /movies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3) Faça também o tratamento para o login inválido
 
-### `npm run eject`
+4) Faça a parte de salvar os dados de autenticação no localStorage e das requisições autorizadas, e faça a listagem de filmes (requisição autorizada)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+5) Faça  a parte de redirecionar para tela de login caso seja acessada uma rota não autorizada
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+6) Implemente o botão Sair com Context API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+7) Faça a tela de detalhes do filme, inicialmente somente com a listagem das avaliações
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+8) Faça card de formulário de avaliação, e só apresente o mesmo se o usuário logado tiver o perfil MEMBER
 
-## Learn More
+9) Implemente a validação do formulário (não aceitar o campo em branco)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+10) Implemente o envio do formulário de avaliação e a atualização da listagem de avaliações após o envio do formulário
